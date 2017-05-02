@@ -423,5 +423,18 @@
             "isNative": true
         }
     },
-    "theme": "vs-dark vscode-theme-monokai-dimmed-themes-dimmed-monokai-tmTheme"
+    "theme": "vs-dark vscode-theme-monokai-dimmed-themes-dimmed-monokai-tmTheme",
+    "windowsState": {
+        "openedFolders": [],
+        "lastActiveWindow": {
+            "workspacePath": "/var/www/html/kitchen",
+            "uiState": {
+                "mode": 0,
+                "x": 1920,
+                "y": 25,
+                "width": 1920,
+                "height": 1029
+            }
+        }
+    }
 }

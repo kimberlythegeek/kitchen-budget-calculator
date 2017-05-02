@@ -1,1 +1,35 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: rgba(240, 235, 216, 1) url('../background.png');
+  color: #333232;
+}
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+h1 {
+  font-size: 5rem;
+  color: #68534D;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+  color: #488286;
+}
+input {
+  background-color: #F0EBD8;
+}
+.form-control {
+  border-color: #77878B;
+}
+.input-group-addon {
+  color: #68534D;
+  background-color: #F0EBD8;
+  border-color: #77878B;
+}
+.input-items > div {
+  max-width: 50%;
+}

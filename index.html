@@ -8,6 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat:300" rel="stylesheet">
 
 
   </head>
@@ -24,7 +25,7 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
           <h3>Step 1: Determine a reasonable budget based on the value of your home.</h2>
-          It is generally recommended to spend <strong>5% - 15%</strong> of your home's current value 
+          It is generally recommended to spend <strong>5% - 15%</strong> of your home's current value
           on a kitchen project, with the national average being 8%.
           Spending less than 5% may lower the value of your home.
           If you spend more than 15%, you are unlikely to see a good return on your investment.
@@ -37,9 +38,9 @@
           on average homeowners using professional services allocated their budget as follows:
         </div>
       </div> <!-- .row -->
+      <br>
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="col-xs-6">
+        <div class="col-sm-2 col-sm-offset-4">
             <ul class="list-unstyled">
               <li>Cabinetry 40%</li>
               <li>Countertops 14.5%</li>
@@ -47,7 +48,7 @@
               <li>Fixtures 5%</li>
             </ul>
           </div>
-          <div class="col-xs-6">
+          <div class="col-sm-2">
             <ul class="list-unstyled">
               <li>Lighting and Electrical 3.5%</li>
               <li>Flooring 3%</li>
@@ -58,65 +59,118 @@
         </div>
 
       </div> <!-- .row -->
+      <br>
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="col-sm-3 col-sm-offeset-3 col-xs-10 col-xs-offset-1">
-            <form class="form-inline">
+          <div class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+            <div class="input-items">
               <div class="form-group">
-              <label>
-                Current Home Value
-                <input type="text" ng-model="homeValue" class="form-control" format="currency">
-              </label>
+                <label class="value-label" for="homeValue">Current Home Value</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                  <input type="text" ng-model="homeValue" class="form-control" id="homeValue">
+                </div>
               </div>
 
               <div class="form-group">
-              <label>
-                Budget Percentage
-                <input type="number" min="5" max="15" ng-model="budgetPercentage" class="form-control">
-              </label>
+                <label class="percent-label" for="budgetPercentage">Budget Percentage</label>
+                <div class="input-group">
+                  <input type="number" min="5" max="15" ng-model="budgetPercentage" class="form-control" id="budgetPercentage">
+                  <span class="input-group-addon">%</span>
+                </div>
               </div>
-            </form>
+            </div>
 
               <div class="result" ng-if="homeValue && budgetPercentage">
-                Total Budget {{ homeValue * budgetPercentage / 100 | currency }}
-                <ul class="list-unstyled">
-                  <li>Cabinetry {{ homeValue * budgetPercentage / 100 * .4 | currency }}</li>
-                  <li>Appliances {{ homeValue * budgetPercentage / 100 * .14 | currency }}</li>
-                  <li>Lighting and Electrical {{ homeValue * budgetPercentage / 100 * .035 | currency }}</li>
-                  <li>Walls and Trim {{ homeValue * budgetPercentage / 100 * .015 | currency }}</li>
-                  <li>Countertops {{ homeValue * budgetPercentage / 100 * .145 | currency }}</li>
-                  <li>Fixtures {{ homeValue * budgetPercentage / 100 * .05 | currency }}</li>
-                  <li>Flooring {{ homeValue * budgetPercentage / 100 * .03 | currency }}</li>
-                  <li>Labor {{ homeValue * budgetPercentage / 100 * .185 | currency }}</li>
-                </ul>
+                <table class="row table-hover">
+                  <tr>
+                    <th class="col-xs-6"><strong>Total Budget</strong></td>
+                    <th class="col-xs-6">{{ homeValue * budgetPercentage / 100 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Cabinetry</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .4 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Appliances</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .14 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Lighting and Electrical</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .035 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Walls and Trim</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .015 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Countertops</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .145 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Fixtures</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .05 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Flooring</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .03 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Labor</strong></td>
+                    <td class="col-xs-6">{{ homeValue * budgetPercentage / 100 * .185 | currency }}</td>
+                  </tr>
+                </table>
               </div>
           </div>
 
-          <div class="col-sm-3 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-            <form>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+
+            <div class="input-items">
               <div class="form-group">
-              <label>
-                Current Budget
-                <input type="text" ng-model="currentBudget" class="form-control">
-              </label>
+                <label class="budget-label" for="currentBudget">Current Budget</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+                  <input type="text" ng-model="currentBudget" class="form-control" id="currentBudget">
+                </div>
               </div>
+            </div>
 
               <div class="result" ng-if="currentBudget">
-                <ul class="list-unstyled">
-                  <li>Cabinetry {{ currentBudget * .4 | currency }}</li>
-                  <li>Appliances {{ currentBudget * .14 | currency }}</li>
-                  <li>Lighting and Electrical {{ currentBudget * .035 | currency }}</li>
-                  <li>Walls and Trim {{ currentBudget * .015 | currency }}</li>
-                  <li>Countertops {{ currentBudget * .145 | currency }}</li>
-                  <li>Fixtures {{ currentBudget * .05 | currency }}</li>
-                  <li>Flooring {{ currentBudget * .03 | currency }}</li>
-                  <li>Labor {{ currentBudget * .185 | currency }}</li>
-                </ul>
+                <table class="row">
+                  <tr>
+                    <td class="col-xs-6"><strong>Cabinetry</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .4 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Appliances</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .14 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Lighting and Electrical</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .035 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Walls and Trim</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .015 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Countertops</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .145 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Fixtures</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .05 | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Flooring</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .03 | currency }}</td>
+                    </tr>
+                  <tr>
+                    <td class="col-xs-6"><strong>Labor</strong></td>
+                    <td class="col-xs-6">{{ currentBudget * .185 | currency }}</td>
+                    </tr>
+                </table>
               </div>
-            </form>
           </div>
-        </div>
-
       </div><!-- .row -->
     </div><!-- .container-fluid -->
     <script
